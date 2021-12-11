@@ -1,0 +1,92 @@
+INSTRUCCIONES
+
+
+*PT 1 SETUP*
+1. We install express, nodemon
+2. We change start or dev script to utilize nodemon easily.
+3. We require express
+  - const express = require("express")
+4. We execute express
+  - const app = express()
+5. We make the principal route with get and "/" route
+6. We start listening the server(we console something to verify)
+
+
+*PT 2 ENVS*
+1. We install dotenv package
+2. We require dotenv package
+  - require("dotenv").config()
+3. We do an env file with all the neccesary variables
+4. We make the port more dynamic
+
+
+*PT 3 MONGO CONNECTION*
+1. We install Mongoose
+2. We make a free database
+3. We require moongose
+4. We connect to the database THEN-EXAMPLE
+5. We connect to the database ASYNC-EXAMPLE
+
+*PT 4 SCHEMAS POSTS*
+1. We make the model folder
+2. We make the user.js file to make the userSchema
+  - mongoose.Schema
+3. We add the appropiate files
+4. We export the model(Schema)
+  - module.exports = mongoose.model("User", userSchema)
+
+
+*PT 5 ROUTES USER*
+1. We make the routes folder
+2. We make the user.js file to make all user routes
+3. We require express, router from express.Router() and the schema
+
+*PT 6 ROUTES USER POST*
+1. We make the post method THEN-EXAMPLE
+2. We export the router
+  - module.exports = router
+3. In app.js we require this user routes!
+4. We set the principal url which is /api and we add userRoutes
+  - app.use("/api", userRoutes);
+5. We check in Postman if the URL works.
+6. We send some info in raw JSON format and we print request.body. --undefined
+7. We make a middleware to accept JSON in express, it has to be before routes.
+  - app.use(express.json());
+8. We create an user
+9. We change it to async await and try catch
+
+*PT 7 CONNECTION TO FRONT*
+1. We install cors
+2. We require cors
+  - const cors = require("cors");
+3. We add a middleware that uses cors
+  - app.use(cors())
+4. We connect from the front with fetch
+
+*PT 8 GET ALL USERS*
+1. We set the get method to work.
+2. We make a static response.
+3. We use the find method to find all users.
+  - userSchema.find()
+
+*PT 8 GET ALL USERS*
+1. We make a static response to url /users/:id.
+2. We get the id with the params;
+  - request.params
+3. We use the method find by id 
+  - userSchema.findById(id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
