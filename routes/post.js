@@ -6,21 +6,11 @@ const router = express.Router()
 // Schemas
 const postSchema = require("../models/post")
 
-
-// Then y catch
-// Async await
-
-/**
- * Pending
- * Accepted
- * Rejected
- */
-
 // Crear post
 router.post("/posts", async (request, response) => {
   console.log("data",request.body)
 
-  // Promise synchronous
+  // Promise asynchronous
   try {
     const post = await postSchema(request.body) // creamos en mongo
     post.save()
